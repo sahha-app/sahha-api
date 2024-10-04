@@ -1,177 +1,160 @@
-Here's a README file for your Spring Boot application that integrates with Sahha API. It includes both Docker and manual run instructions, setup details, and an overview of the project.
+### Sahha API Integration
 
 ---
 
-# Sahha API Integration Application
+#### Overview
+This project is a Spring Boot application that integrates with the Sahha API to retrieve user biomarkers and other information from their devices. The application communicates with the Sahha API using OAuth to authenticate and access users' data. It fetches biomarker data for users based on their external IDs.
 
-This Spring Boot application integrates with the Sahha API to retrieve user biomarkers and account information. It fetches an account token at runtime, which is used globally to authenticate requests to the Sahha API. The application also allows you to retrieve user biomarker data by using an external user ID.
+---
 
-## Prerequisites
+### Prerequisites
 
-- **Java 21** (Ensure `JAVA_HOME` is correctly set)
-- **Maven** (for building the Spring Boot application)
-- **Docker** (optional, for running the application inside a container)
-- **Environment variables**: `CLIENT_ID`, `CLIENT_SECRET`
+- Java 17
+- Maven > 3.6.3+
+- Docker (if running via Docker)
 
-## Configuration
+---
 
-Before running the application, make sure to provide the required environment variables:
+### Configuration
+- Run the following commands to download the source code
+```bash
+git clone https://github.com/sahha-app/sahha-api.git
 
-- `CLIENT_ID`: The client ID for accessing the Sahha API
-- `CLIENT_SECRET`: The client secret for accessing the Sahha API
-
-You can set these variables in an `.env` file or export them manually:
-
-```
-# .env file
-CLIENT_ID=your_client_id_here
-CLIENT_SECRET=your_client_secret_here
+cd sahha-api
 ```
 
-## Project Structure
+The following environment variables need to be provided for the application to run:
 
-- **AccountToken Configuration**: Manages the account token globally across the application.
-- **AccountController**: Provides an API to retrieve the account token from Sahha.
-- **BiomarkersController**: Allows fetching of biomarker data based on an external user ID and optional biomarker types.
-- **Service Layer**: The `AccountService` and `BiomarkerService` classes handle API calls to Sahha for fetching the account token and biomarker data, respectively.
+- `clientId`: Your client ID for the Sahha API.
+- `clientSecret`: Your client secret for the Sahha API.
 
-## How to Run
+A `.env` file is provided in the project directory, however if the file is not found, make sure to create a `.env` file with this exact same syntax
 
-### Running Without Docker
+The `.env` file should be created in the root directory (if not provided) of the project and set the values for `clientId` and `clientSecret`:
 
-1. **Clone the repository** and navigate to the project directory.
+```env
+clientId=YOUR_CLIENT_ID
+clientSecret=YOUR_CLIENT_SECRET
+```
+** `clientId` and `clientSecret` are obtained from Sahha API from [Sahha app](https://app.sahha.ai/dashboard/credentials)
 
+
+
+---
+
+### Running the Application
+You can run the application using one of the following methods:
+
+#### 1. **Running with Docker (recommended)**
+
+- Build and run the Docker image in one command using the provided script:
+
+```bash
+./build.sh
+```
+
+This script does the following:
+- Reads the `.env` file and exports the variables for the application to use.
+- Builds the Maven project and packages it into a JAR file.
+- Builds a Docker image using the Dockerfile.
+- Runs the Docker container with the application on port `8081`.
+
+**Note:** You need to have Docker installed and configured.
+
+#### 2. **Running Locally with Maven**
+
+If you prefer to run the application directly without Docker, follow these steps:
+
+1. **Install dependencies and build the JAR**:
+
+   Run the following command to install dependencies and package the application:
    ```bash
-   git clone <repository_url>
-   cd sahha-api
+   mvn clean install -DskipTests
    ```
 
-2. **Set environment variables**.
+2. **Set environment variables**:
 
-   You can set the environment variables by creating an `.env` file in the project root:
-
-   ```
-   CLIENT_ID=your_client_id_here
-   CLIENT_SECRET=your_client_secret_here
-   ```
-
-   Then, run:
-
+   You can set the environment variables locally before running the application. For example, in a Unix-based terminal, run:
    ```bash
-   export $(cat .env | xargs)
+   export clientId=YOUR_CLIENT_ID
+   export clientSecret=YOUR_CLIENT_SECRET
    ```
 
-3. **Run the application**.
+3. **Run the application**:
 
-   First, package the Spring Boot application:
-
+   After setting the environment variables, start the Spring Boot application:
    ```bash
-   mvn clean package
+   mvn spring-boot:run
    ```
 
-   Run the Spring Boot application:
+   The application will be accessible at `http://localhost:8080`.
 
+This README looks solid! Here's a suggested fix for your alternative way of running the application via the JAR file:
+
+
+
+#### 3. **Running the JAR file directly**
+
+After setting up your environment variables, you can run the application from the built JAR file. First, make sure to build the project:
+
+1. Build the project and generate the JAR:
+   ```bash
+   mvn clean package -DskipTests
+   ```
+
+2. Run the JAR with the necessary environment variables:
    ```bash
    java -jar target/app-v1.jar
    ```
 
-   The application will run on port **8080** by default.
-
-4. **Access the API**.
-
-    - Retrieve the account token:  
-      `GET /public/api/v1/account/get`
-
-    - Get biomarkers for a user:  
-      `GET /public/api/v1/biomarkers/get/{externalId}?biomarker={biomarker}`
-
-### Running with Docker
-
-1. **Set environment variables**.
-
-   Ensure you have an `.env` file with the necessary environment variables:
-
-   ```
-   CLIENT_ID=your_client_id_here
-   CLIENT_SECRET=your_client_secret_here
-   ```
-
-2. **Build and run the application using Docker**.
-
-   Use the provided `build.sh` script or run the commands manually.
-
-   **Script to Build and Run Docker Container**:
-   ```bash
-   #!/bin/bash
-
-   # Export environment variables from .env
-   export $(cat .env | xargs)
-
-   # Run Maven build to create the JAR file
-   echo "Running Maven build..."
-   mvn clean package
-
-   # Build the Docker image
-   echo "Building Docker image..."
-   docker build -t sahha-app .
-
-   # Run the Docker container
-   echo "Running Docker image..."
-   docker run -p 8081:8080 --env-file .env -d sahha-app
-
-   echo "Docker container is running on port 8081."
-   ```
-
-3. **Build the Docker image** manually if not using the script.
-
-   ```bash
-   mvn clean package
-   docker build -t sahha-app .
-   ```
-
-4. **Run the Docker container**.
-
-   ```bash
-   docker run -p 8081:8080 --env-file .env -d sahha-app
-   ```
-
-   The application will be accessible at `http://localhost:8081`.
-
-## API Endpoints
-
-- **Retrieve Account Token**:  
-  `GET /public/api/v1/account/get`  
-  Fetches the account token from the Sahha API.
-
-- **Get Biomarkers for a User**:  
-  `GET /public/api/v1/biomarkers/get/{externalId}?biomarker={biomarker}`  
-  Retrieves biomarker data for the specified user.
-
-## Dockerfile
-
-The Dockerfile for this application uses a minimal image with JDK 17:
-
-```dockerfile
-# Use a base image with JDK 17
-FROM openjdk:17-jdk-alpine
-
-# Set working directory
-WORKDIR /app
-
-# Copy the Spring Boot JAR file
-COPY /target/app-v1.jar /app/app-v1.jar
-
-# Expose the application port
-EXPOSE 8080
-
-# Command to run the application
-ENTRYPOINT ["java", "-jar", "/app/app-v1.jar"]
-```
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+   The application will be accessible at `http://localhost:8080`.
 
 ---
 
-This README should cover all necessary steps and information for running and using the Sahha API integration application! Let me know if you need any further customization.
+This completes the alternative method for running the app. The rest of the README structure looks great. Let me know if you'd like further tweaks!
+
+---
+
+### API Endpoints
+
+#### 1. **Biomarkers**
+- **Endpoint**: `/public/api/v1/biomarkers/get/{externalId}`
+- **Method**: `GET`
+- **Description**: Retrieves biomarker data for a user based on their external ID.
+- **Parameters**:
+    - `externalId`: The ID of the user in the external system.
+    - `biomarker` (optional): The type of biomarker to filter the results.
+
+Example request:
+```bash
+curl "http://localhost:8080/public/api/v1/biomarkers/get/{externalId}?biomarker=sleep"
+```
+** List of all biomarker variables can be found in the [Sahha Biomarkers](https://docs.sahha.ai/docs/products/biomarkers#list-of-biomarkers)
+
+---
+
+### Project Structure
+
+- **Configuration**:
+    - `AccountToken`: Handles setting and retrieving the account token in runtime.
+
+- **Controllers**:
+    - `BiomarkersController`: Exposes an endpoint to retrieve biomarker data using the user's external ID.
+
+- **Services**:
+    - `AccountService`: Fetches the account token from Sahha API.
+    - `BiomarkerService`: Retrieves biomarker data from Sahha API.
+
+---
+
+### Dockerfile Overview
+
+The Dockerfile is configured to use a base image of Java 17 (Alpine). When the Docker container runs, it:
+- Copies the Spring Boot JAR file to the container.
+- Exposes port `8080` for the application.
+- Executes the JAR file to start the application.
+
+---
+
+### License
+This project is licensed under the MIT License.
