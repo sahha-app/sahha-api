@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: app
-CLIENT_ID: ${clientId}
-CLIENT_SECRET: ${clientSecret}
