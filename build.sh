@@ -2,9 +2,6 @@
 
 export $(cat .env | xargs)
 
-echo $clientId
-echo $clientSecret
-
 
 # Run Maven build to create the JAR file
 echo "Running Maven build..."
