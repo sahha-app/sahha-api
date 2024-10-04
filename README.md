@@ -43,7 +43,7 @@ CLIENT_SECRET=your_client_secret_here
 
    ```bash
    git clone <repository_url>
-   cd sahha-api-app
+   cd sahha-api
    ```
 
 2. **Set environment variables**.
