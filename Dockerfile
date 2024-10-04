@@ -1,14 +1,15 @@
-# Use an official OpenJDK runtime as a parent image
+# Use a base image with JDK
 FROM openjdk:17-jdk-alpine
 
-# Set the working directory inside the container
+
+# Set working directory
 WORKDIR /app
 
-# Copy the application's jar file to the container
-COPY target/com.sahha.app-0.0.1-SNAPSHOT.jar app.jar
+# Copy your Spring Boot JAR file to the container
+COPY /target/app-v1.jar /app/app-v1.jar
 
-# Expose port 8080
+# Expose the port your Spring Boot app runs on (typically 8080)
 EXPOSE 8080
 
-# Run the jar file
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+# Command to run your Spring Boot application, passing variables as JVM arguments
+ENTRYPOINT ["java", "-jar", "/app/app-v1.jar"]

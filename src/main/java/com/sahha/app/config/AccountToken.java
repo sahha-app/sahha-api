@@ -9,6 +9,9 @@ public class AccountToken {
 
     private String accountToken;
 
+    public AccountToken() {
+
+    }
 
     public void setAccountToken(String accountToken) {
         this.accountToken = accountToken;

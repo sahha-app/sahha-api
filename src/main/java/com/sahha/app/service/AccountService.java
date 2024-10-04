@@ -12,17 +12,17 @@ import java.util.Map;
 @Service
 public class AccountService {
 
-    AccountToken accountToken;
-
-    public AccountService(AccountToken accountToken) {
-        this.accountToken = accountToken;
-    }
+    private final AccountToken accountToken;
 
     @Value("${CLIENT_ID}")
     private String clientId;
 
     @Value("${CLIENT_SECRET}")
     private String clientSecret;
+
+    public AccountService(AccountToken accountToken) {
+        this.accountToken = accountToken;
+    }
 
     WebClient client1 = WebClient.builder()
             .baseUrl("https://sandbox-api.sahha.ai")
