@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f6a2a33-56e4-4a29-99b7-ddea3dc823cd" name="Changes" comment="fix: update readme file">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/HealthScoresMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/constant/HealthScoresConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/HealthScoresMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/HealthScoresMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/constant/HealthScoresConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/constant/HealthScoresConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/BiomarkersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/BiomarkersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/HealthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/HealthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/HealthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/HealthScoresService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/controller/BiomarkersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sahha/app/controller/BiomarkersController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,11 +72,11 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Maven.app [package]">
+  <component name="RunManager" selected="Application.app">
     <configuration name="app" type="Application" factoryName="Application">
       <envs>
         <env name="clientId" value="ZyfJR8pVf6RfO8Mc2nEd6jgUOF2nJrMx" />

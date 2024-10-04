@@ -12,7 +12,7 @@ import java.util.*;
 @RequestMapping("/public/api/v1/biomarkers")
 public class BiomarkersController {
 
-    BiomarkerService biomarkerService;
+    private final BiomarkerService biomarkerService;
 
     public BiomarkersController(BiomarkerService biomarkerService) {
         this.biomarkerService = biomarkerService;
@@ -20,8 +20,9 @@ public class BiomarkersController {
 
 
     @GetMapping("/get/{externalId}")
-    public ArrayList<Map<String,Object>> getBioMarkers(@PathVariable String externalId
-    ,@RequestParam (required = false) String biomarker){
+    public ArrayList<Map<String, Object>> getBioMarkers(
+            @PathVariable String externalId,
+            @RequestParam(required = false) String biomarker) {
         return biomarkerService.getBioMarkersService(externalId, biomarker);
     }
 }
