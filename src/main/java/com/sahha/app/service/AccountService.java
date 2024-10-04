@@ -10,11 +10,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class AccountSerivce {
+public class AccountService {
 
     AccountToken accountToken;
 
-    public AccountSerivce(AccountToken accountToken) {
+    public AccountService(AccountToken accountToken) {
         this.accountToken = accountToken;
     }
 
