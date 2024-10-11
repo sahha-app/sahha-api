@@ -1,3 +1,7 @@
 .env
 /target
 .mvn
+.idea
+*.json
+jendi-app-firebase-adminsdk-oe31e-de4ffe700e.json
+src/main/resources/jendi-app-firebase-adminsdk-oe31e-de4ffe700e.json
