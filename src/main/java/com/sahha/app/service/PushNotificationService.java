@@ -17,13 +17,13 @@ public class PushNotificationService {
 
 
 
-//    public PushNotificationService() throws IOException {
+    public PushNotificationService() throws IOException {
 //        FirebaseOptions options = FirebaseOptions.builder()
-////                .setCredentials(GoogleCredentials.fromStream(new FileInputStream("C:\\Users\\Andre\\IdeaProjects\\workspace\\sahha-api\\src\\main\\resources\\jendi-app-firebase-adminsdk-oe31e-de4ffe700e.json")))
-//                .setCredentials(GoogleCredentials.build())
+////              .setCredentials(GoogleCredentials.fromStream(new FileInputStream("C:\\Users\\Andre\\IdeaProjects\\workspace\\sahha-api\\src\\main\\resources\\jendi-app-firebase-adminsdk-oe31e-de4ffe700e.json")))
+////                .setCredentials(GoogleCredentials.build())
 //                .build();
 //        FirebaseApp.initializeApp(options);
-//    }
+    }
 
 
 
