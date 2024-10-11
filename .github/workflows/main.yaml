@@ -3,7 +3,7 @@ name: Build, Push, and Update
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   Deploy:
