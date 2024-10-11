@@ -10,18 +10,20 @@ jobs:
     name: Deploy to EC2
     runs-on: ubuntu-latest
     steps:
-      - name: Build and Deploy
-        env:
-          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          HOSTNAME: ${{secrets.SSH_HOST}}
-          USER_NAME: ${{secrets.USER_NAME}}
+      - name: Checkout the code
+        uses: actions/checkout@v4
 
+      - name: Deploy to my EC2 instance
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SOURCE: "./"
+          REMOTE_HOST: ${{secrets.SSH_HOST}}
+          REMOTE_USER: ${{secrets.USER_NAME}}
+          TARGET: "/home/ec2-user/workspace/sahha-api"
+
+      - name: Build and Deploy
         run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-          
-              # Now we have got the access of EC2 and we will start the deploy .
-              cd /home/workspace/sahha-api &&
               git checkout main &&
               git fetch --all &&
               git reset --hard origin/main &&
@@ -30,4 +32,3 @@ jobs:
               docker rm $(docker ps -a -q)
               chmod +x build.sh
               ./build.sh
-              '
