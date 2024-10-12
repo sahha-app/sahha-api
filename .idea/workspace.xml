@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f6a2a33-56e4-4a29-99b7-ddea3dc823cd" name="Changes" comment="fix: command line runner to get account token">
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prepare.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/FirebaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/FirebaseMessaging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/PushNotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/RecommendationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/dto/NotificationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/PushNotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/RecommendationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/BiomarkersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/BiomarkersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/AppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sahha/app/AppApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/controller/BiomarkersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sahha/app/controller/BiomarkersController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +70,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging master",
     "jdk.selected.JAVA_MODULE": "21",
     "last_opened_file_path": "/home/mustafa/workspace/sahha-api",
     "node.js.detected.package.eslint": "true",
@@ -65,18 +78,19 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Maven.app [package]">
+  <component name="RunManager" selected="Application.app">
     <configuration name="app" type="Application" factoryName="Application">
       <envs>
         <env name="clientId" value="ZyfJR8pVf6RfO8Mc2nEd6jgUOF2nJrMx" />
         <env name="clientSecret" value="BPEa2nfOzJ9ViMMq7kYzoJNAElt2WCRcZpIOoMqi7zQ8jT09qfCbHmiBJS4yAOxp" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="$PROJECT_DIR$/src/main/resources/jendi-app-firebase-adminsdk-oe31e-de4ffe700e.json" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.sahha.app.AppApplication" />
       <module name="app" />
@@ -156,6 +170,7 @@
       <workItem from="1728045506180" duration="7270000" />
       <workItem from="1728076614014" duration="264000" />
       <workItem from="1728076891865" duration="4576000" />
+      <workItem from="1728716623490" duration="6059000" />
     </task>
     <servers />
   </component>
