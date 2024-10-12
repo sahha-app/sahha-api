@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f6a2a33-56e4-4a29-99b7-ddea3dc823cd" name="Changes" comment="fix: command line runner to get account token">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app-v1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/app-v1.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/AppApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/config/AccountToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/config/BiomarkerMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/config/CMDLineRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/constant/AspectConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/constant/BiomarkerConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/controller/BiomarkersController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/log/LoggingAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/service/AccountService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/service/BiomarkerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/util/AspectUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/sahha/app/AppApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/FirebaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/FirebaseConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/FirebaseMessaging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/RecommendationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/RecommendationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/PushNotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/PushNotificationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

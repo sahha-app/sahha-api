@@ -13,8 +13,6 @@ import java.io.IOException;
 @Configuration
 public class FirebaseConfig {
 
-//    @Value("${GOOGLE_APPLICATION_CREDENTIALS}")
-//    FileInputStream serviceAccount;
 
     @Value("${GOOGLE_APPLICATION_CREDENTIALS}") // Inject the path to the JSON file from application.properties
     private String serviceAccountFilePath;
