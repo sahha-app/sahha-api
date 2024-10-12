@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a2a33-56e4-4a29-99b7-ddea3dc823cd" name="Changes" comment="fix: merge with master and webclient for recommendation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/SecurityAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9f6a2a33-56e4-4a29-99b7-ddea3dc823cd" name="Changes" comment="feat: security so far">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/SecurityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/SecurityAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +164,7 @@
       <workItem from="1728076614014" duration="264000" />
       <workItem from="1728076891865" duration="4576000" />
       <workItem from="1728716623490" duration="8883000" />
-      <workItem from="1728737281576" duration="1692000" />
+      <workItem from="1728737281576" duration="2322000" />
     </task>
     <task id="LOCAL-00001" summary="fix: merge with master and webclient for recommendation">
       <option name="closed" value="true" />
@@ -178,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728732212251</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: security so far">
+      <option name="closed" value="true" />
+      <created>1728739139814</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728739139814</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +214,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: command line runner to get account token" />
     <MESSAGE value="fix: merge with master and webclient for recommendation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: merge with master and webclient for recommendation" />
+    <MESSAGE value="feat: security so far" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: security so far" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
