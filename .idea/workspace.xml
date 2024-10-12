@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f6a2a33-56e4-4a29-99b7-ddea3dc823cd" name="Changes" comment="fix: command line runner to get account token">
-      <change afterPath="$PROJECT_DIR$/prepare.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/FirebaseConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/FirebaseMessaging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/PushNotificationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/RecommendationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/dto/NotificationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/PushNotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/service/RecommendationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="9f6a2a33-56e4-4a29-99b7-ddea3dc823cd" name="Changes" comment="fix: merge with master and webclient for recommendation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/config/SecurityAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/BiomarkersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sahha/app/controller/BiomarkersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/AppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sahha/app/AppApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sahha/app/controller/BiomarkersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sahha/app/controller/BiomarkersController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +21,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -63,28 +59,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "Merging master",
-    "jdk.selected.JAVA_MODULE": "21",
-    "last_opened_file_path": "/home/mustafa/workspace/sahha-api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;features/sso&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mustafa/workspace/sahha-api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.app">
     <configuration name="app" type="Application" factoryName="Application">
       <envs>
@@ -170,16 +167,50 @@
       <workItem from="1728045506180" duration="7270000" />
       <workItem from="1728076614014" duration="264000" />
       <workItem from="1728076891865" duration="4576000" />
-      <workItem from="1728716623490" duration="6059000" />
+      <workItem from="1728716623490" duration="8883000" />
+      <workItem from="1728737281576" duration="1692000" />
     </task>
+    <task id="LOCAL-00001" summary="fix: merge with master and webclient for recommendation">
+      <option name="closed" value="true" />
+      <created>1728732212251</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728732212251</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="features/sso" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: command line runner to get account token" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: command line runner to get account token" />
+    <MESSAGE value="fix: merge with master and webclient for recommendation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: merge with master and webclient for recommendation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
