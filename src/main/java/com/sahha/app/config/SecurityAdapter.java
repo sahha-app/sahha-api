@@ -9,18 +9,32 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 public class SecurityAdapter {
 
     @Bean
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests().requestMatchers("/", "/login")
-                .permitAll()
-                .anyRequest().authenticated().and().oauth2Login(Customizer.withDefaults());
-        return http.build();
+        return http
+                .authorizeHttpRequests(auth -> {
+                    auth.requestMatchers("/").permitAll();
+                    auth.requestMatchers("/favicon.ico").permitAll();
+                    auth.anyRequest().authenticated();
+                })
+                .oauth2Login(withDefaults())
+                .formLogin(withDefaults())
+                .build();
     }
 
 
-}
+//                .requestMatchers("/", "/login")
+//                .permitAll()
+//                .anyRequest().authenticated().and().oauth2Login(Customizer.withDefaults());
+
+
+
+//        return http.build();
+    }

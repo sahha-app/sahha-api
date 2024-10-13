@@ -5,6 +5,12 @@ spring:
     oauth2:
       client:
         registration:
+          github:
+            client-id: "58313451066-497itge2q2od8j43f5b0vf2su50nk4b3.apps.googleusercontent.com"
+            client-secret: "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"
+          facebook:
+            client-id: "58313451066-497itge2q2od8j43f5b0vf2su50nk4b3.apps.googleusercontent.com"
+            client-secret: "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"
           google:
             client-id: "58313451066-497itge2q2od8j43f5b0vf2su50nk4b3.apps.googleusercontent.com"
             client-secret: "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"
@@ -14,6 +20,7 @@ spring:
             token-uri: "https://oauth2.googleapis.com/token"
             user-info-uri: "https://www.googleapis.com/oauth2/v3/userinfo"
             user-name-attribute: "sub"
+
 CLIENT_ID: ${clientId}
 CLIENT_SECRET: ${clientSecret}
 GOOGLE_CREDENTIAL: ${GOOGLE_APPLICATION_CREDENTIALS}
