@@ -16,15 +16,9 @@ public class SecurityAdapter {
 
     @Bean
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests(a -> a
-                        .requestMatchers("/").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .exceptionHandling(e -> e
-                        .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-                )
-                .oauth2Login(Customizer.withDefaults());
+        http.authorizeRequests().requestMatchers("/", "/login")
+                .permitAll()
+                .anyRequest().authenticated().and().oauth2Login(Customizer.withDefaults());
         return http.build();
     }
 
