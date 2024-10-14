@@ -24,3 +24,9 @@ spring:
 CLIENT_ID: ${clientId}
 CLIENT_SECRET: ${clientSecret}
 GOOGLE_CREDENTIAL: ${GOOGLE_APPLICATION_CREDENTIALS}
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
