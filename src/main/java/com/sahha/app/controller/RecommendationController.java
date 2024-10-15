@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/public/api/v1/recommendations")
 public class RecommendationController {
+
     private final RecommendationService recommendationService;
+
     public RecommendationController(RecommendationService recommendationService){
         this.recommendationService = recommendationService;
     }
