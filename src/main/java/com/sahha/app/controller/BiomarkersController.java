@@ -1,5 +1,7 @@
 package com.sahha.app.controller;
 
+import com.sahha.app.config.BiomarkerMap;
+import com.sahha.app.dto.CategoryDTO;
 import com.sahha.app.service.BiomarkerService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +19,15 @@ public class BiomarkersController {
 
 
     @GetMapping("/get/{externalId}")
-    public ArrayList<Map<String,Object>> getBioMarkers(@PathVariable String externalId
-    ,@RequestParam (required = false) String biomarker){
+    public ArrayList<Map<String, Object>> getBioMarkers(
+            @PathVariable String externalId,
+            @RequestParam(required = false) String biomarker) {
+
         return biomarkerService.getBioMarkersService(externalId, biomarker);
+    }
+
+    @GetMapping("/get-biomarker-categories")
+    public List<CategoryDTO> getBiomarkerCategories(){
+        return BiomarkerMap.listBiomarkerCategories();
     }
 }

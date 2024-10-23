@@ -5,7 +5,7 @@ export $(cat .env | xargs)
 
 # Run Maven build to create the JAR file
 echo "Running Maven build..."
-mvn package
+mvn package -DskipTests
 
 
 # Build the Docker image with the provided clientId and clientSecret

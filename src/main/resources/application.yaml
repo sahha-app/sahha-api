@@ -5,6 +5,9 @@ spring:
     oauth2:
       client:
         registration:
+          facebook:
+            client-id: "917587673606332"
+            client-secret: "942ec1f536ade3ecdc7e9ad10a1acba7"
           google:
             client-id: "58313451066-497itge2q2od8j43f5b0vf2su50nk4b3.apps.googleusercontent.com"
             client-secret: "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"
