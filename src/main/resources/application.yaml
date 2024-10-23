@@ -1,6 +1,16 @@
 spring:
   application:
     name: app
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+  data:
+    redis:
+      host: "redis-17526.c293.eu-central-1-1.ec2.redns.redis-cloud.com"
+      password: "7s0i82BUVLrxGp4UQD1UlTI7nsI0Albd"
+      port: 17526
   security:
     oauth2:
       client:
@@ -8,6 +18,10 @@ spring:
           facebook:
             client-id: "917587673606332"
             client-secret: "942ec1f536ade3ecdc7e9ad10a1acba7"
+            scope: email,public_profile
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+            client-name: Facebook
           google:
             client-id: "58313451066-497itge2q2od8j43f5b0vf2su50nk4b3.apps.googleusercontent.com"
             client-secret: "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"
@@ -17,6 +31,16 @@ spring:
             token-uri: "https://oauth2.googleapis.com/token"
             user-info-uri: "https://www.googleapis.com/oauth2/v3/userinfo"
             user-name-attribute: "sub"
+          facebook:
+            authorization-uri: "https://www.facebook.com/dialog/oauth"
+            token-uri: "https://graph.facebook.com/oauth/access_token"
+            user-info-uri: "https://graph.facebook.com/me?fields=id,name,email,picture"
+            user-name-attribute: "id"
 CLIENT_ID: ${clientId}
 CLIENT_SECRET: ${clientSecret}
 GOOGLE_CREDENTIAL: ${GOOGLE_APPLICATION_CREDENTIALS}
+server:
+  servlet:
+    session:
+      timeout: 10000
+
