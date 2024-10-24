@@ -1,8 +1,15 @@
 package com.sahha.app.model;
 
+import com.sahha.app.enums.AgeGroup;
+import com.sahha.app.enums.Gender;
+import com.sahha.app.enums.TopEducation;
+
+
 import java.util.UUID;
 
+
 public class User {
+
 
     private UUID id;
 
@@ -13,29 +20,11 @@ public class User {
 
     private Boolean wearable;
 
-    private enum ageGroup{
-        FROM14to20,
-        FROM20to30,
-        FROM30to40,
-        FROM40to50,
-        FROM50to60,
-        FROM60to70,
-        FROM70to80,
-    }
+    private AgeGroup ageGroup;
 
-    private enum gender{
-        MALE,
-        FEMALE,
-        OTHERS;
-    }
+    private Gender gender;
 
-    private  enum topEducation{
-        HIGHSCOOL,
-        BACHLORS,
-        DIPLOMA,
-        MASTERS,
-        DOCTORATE;
-    }
+    private TopEducation topEducation;
 
     private String location;
     private String mainLanguage;
@@ -114,5 +103,29 @@ public class User {
 
     public void setProfessionGroup(String professionGroup) {
         this.professionGroup = professionGroup;
+    }
+
+    public AgeGroup getAgeGroup() {
+        return ageGroup;
+    }
+
+    public void setAgeGroup(AgeGroup ageGroup) {
+        this.ageGroup = ageGroup;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public TopEducation getTopEducation() {
+        return topEducation;
+    }
+
+    public void setTopEducation(TopEducation topEducation) {
+        this.topEducation = topEducation;
     }
 }
