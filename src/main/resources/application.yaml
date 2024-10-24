@@ -7,6 +7,9 @@ spring:
       flush-mode: on_save
       namespace: spring:session
   data:
+    mongodb:
+      uri: mongodb+srv://user:oPTgaPwViLIDom9W@cluster0.pnlyb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: userDatabase
     redis:
       host: "redis-17526.c293.eu-central-1-1.ec2.redns.redis-cloud.com"
       password: "7s0i82BUVLrxGp4UQD1UlTI7nsI0Albd"
@@ -43,4 +46,8 @@ server:
   servlet:
     session:
       timeout: 10000
-
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE

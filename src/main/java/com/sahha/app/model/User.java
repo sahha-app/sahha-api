@@ -3,20 +3,29 @@ package com.sahha.app.model;
 import com.sahha.app.enums.AgeGroup;
 import com.sahha.app.enums.Gender;
 import com.sahha.app.enums.TopEducation;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
 import java.util.UUID;
 
-
+@Entity
+@Document("users")
 public class User {
 
 
+    @Id
     private UUID id;
 
     private String firstName;
     private String lastName;
 
     private String email;
+    private String password;
 
     private Boolean wearable;
 
@@ -30,16 +39,9 @@ public class User {
     private String mainLanguage;
     private String professionGroup;
 
-    public User(UUID id, String firstName, String lastName, String email, Boolean wearable, String location, String mainLanguage, String professionGroup) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.wearable = wearable;
-        this.location = location;
-        this.mainLanguage = mainLanguage;
-        this.professionGroup = professionGroup;
+    public User() {
     }
+
 
     public UUID getId() {
         return id;
@@ -127,5 +129,13 @@ public class User {
 
     public void setTopEducation(TopEducation topEducation) {
         this.topEducation = topEducation;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
